@@ -1,0 +1,106 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "module",
+      "project": "./tsconfig.json",
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "allowImportExportEverywhere": true
+      }
+    },
+    "extends": [
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react-hooks/recommended",
+      "standard-with-typescript",
+      "plugin:import/errors",
+      "plugin:import/warnings",
+      "plugin:import/typescript"
+    ],
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true,
+      "mocha": true,
+      "jest": true
+    },
+    "rules": {
+      "comma-dangle": "off",
+      "jsx-quotes": ["error", "prefer-double"],
+      "react/jsx-closing-bracket-location": ["warn", "tag-aligned"],
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off",
+      "space-before-function-paren": ["off"],
+      "react/jsx-handler-names": 0,
+      "no-prototype-builtins": 0,
+      "template-curly-spacing": "off",
+      "indent": "off",
+      "multiline-ternary": ["off"],
+      "prefer-promise-reject-errors": [
+        "error",
+        {
+          "allowEmptyReject": true
+        }
+      ],
+      "no-debugger": "warn",
+      "@typescript-eslint/space-before-function-paren": "off",
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/no-floating-promises": "off",
+      "@typescript-eslint/return-await": "off",
+      "@typescript-eslint/dot-notation": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/prefer-nullish-coalescing": [
+        "error",
+        {
+          "ignoreMixedLogicalExpressions": true
+        }
+      ],
+      "@typescript-eslint/indent": ["off", { "flatTernaryExpressions": false }],
+      "import/no-named-as-default-member": "off",
+      "react/prop-types": "off",
+      "import/order": [
+        "warn",
+        {
+          "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "unknown"],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc" /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */,
+            "caseInsensitive": true /* ignore case. Options: [true, false] */
+          },
+          "pathGroups": [
+            {
+              "pattern": "react*",
+              "group": "external",
+              "position": "before"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": ["react"]
+        }
+      ]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      },
+      "import/resolver": {
+        "typescript": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
+    "overrides": [
+      {
+        "files": "*.spec.ts",
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ],
+    "plugins": ["react", "@typescript-eslint/eslint-plugin"],
+    "ignorePatterns": ["*.d.ts", "reportWebVitals.ts"]
+  }
